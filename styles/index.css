@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ .hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
+
+.prose h1 {
+  @apply text-2xl md:text-3xl
+}
+
+.prose p {
+    @apply dark:text-gray-50
+}
+
+.prose pre {
+  @apply p-5 bg-gray-900 dark:bg-gray-900
+}
+
+.prose pre > code {
+  @apply border-0 bg-gray-900 dark:bg-gray-900
+}
+
+.prose img {
+  @apply border-2 border-slate-600 rounded-lg
+}
+
+.prose a {
+  @apply dark:text-teal-400 text-indigo-500
+}
+
+.prose code {
+  @apply px-1 py-0.5 bg-gray-900 dark:bg-gray-900 text-gray-50 rounded-lg border-gray-600 border-2
+}
+
+.prose a {
+  @apply no-underline
+}
+
+.prose ul ::marker {
+  @apply text-indigo-800 dark:text-indigo-500
+}
+
