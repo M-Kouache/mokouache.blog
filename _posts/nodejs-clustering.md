@@ -11,11 +11,13 @@ ogImage:
 ---
 
 
-**As a follow-up from the last article about “what is the event loop in node.js”, we all agree that node.js is single-threaded. The way it handles IO-bound operations is by offloading the IO tasks to C++ Api (libuv). Which is managed by the event loop ( please refer to the mentioned article above to learn more about the event loop ), but in another scenario where there is more Cpu-bound or intensive cpu tasks, your node.js applications will struggle because all the CPU operations will be executed in the call-stack (v8), which mean that the event loop will be blocked tell node.js is finishes executing the Cpu-bound operation, This is not suitable for a server application, because the process will be overwhelmed when it receives too many requests, and If the process crashes, users won’t be able to access your application**.
 
-That’s why node.js introduced the `cluster module`, Clustering allows node.js to create multiple instances (workers) of the same Node.js application to take advantage of multi-core processors and improve the application's performance and scalability. Each node.js process will run on its own core, listening on the same port, the master process load balances incoming requests between each  spawned process, and the `cluster module` achieves that by implementing the `round-robin` algorithm under the hood
+That’s why node.js introduced the `cluster module`, 
+clustering allows node.js to create multiple instances (workers) of the same Node.js application to take advantage of multi-core processors and improve the application's performance and scalability.<br>
 
-![nodeJs-clustering.png](/assets/blog/nodejs-clustering/nodeJs-clustering.png)
+Each node.js process will run on its own core, listening on the same port, 
+the master process load balances incoming requests between each  spawned process, 
+and the `cluster module` achieves that by implementing the `round-robin` algorithm under the hood :
 
 let’s get into how clustering works in node.js in detail, First, we will create a CPU-intensive program without the cluster module, and later on, we will scale the same program with clustering.
 
@@ -25,11 +27,15 @@ First, let’s create a directory named  `node-clustering` :
 $ mkdir node-clustering
 ```
 
+<br>
+
 Move into the directory :
 
 ```bash
 $ cd node-clustering
 ```
+
+<br>
 
 Create an `index.js` file:
 
@@ -37,17 +43,24 @@ Create an `index.js` file:
 $ touch index.js
 ```
 
+<br>
+
 Then, initialize the project, which will also create a `package.json` file:
 
 ```bash
 $ pnpm init
 ```
 
+<br>
+
 Lastly, let’s install `express` : 
 
 ```bash
 $ pnpm add express
 ```
+
+<br>
+<br>
 
 # Creating a program without the cluster module
 
@@ -70,6 +83,8 @@ app.get('/fast', (req, res) => {
 app.listen(port, ()=> console.log(`listening on port ${port}`))
 ```
 
+<br>
+
 this may not seem like a real-world scenario, but to keep things simple we used long for-loop which simulates the same behavior as a cpu-intensive task.
 
 In your terminal run the program :
@@ -78,15 +93,22 @@ In your terminal run the program :
 $ node index.js
 ```
 
+<br>
+
 Then in your browser of choice, let’s hit both routes at the same time :
 
 ![slow-route.png](/assets/blog/nodejs-clustering/slow-route.png)
+
+<br>
 
 On route `/slow` the response took approximately `8s`
 
 ![fast-route.png](/assets/blog/nodejs-clustering/fast-route.png)
 
+
 Even though the `/fast` route has no blocking logic it took `6.60s` to load, and that’s because of node.js single-threaded architecture so whenever we have CPU-bound operations the event loop will block until the call stack is done executing the operation.
+
+<br>
 
 # Clustering the same program with the cluster module:
 
@@ -99,17 +121,23 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 ```
 
+<br>
+
 Second let’s get the Path to `index.js`  where our server lives :
 
 ```javascript
 const __dirname = dirname(fileURLToPath(import.meta.url));
 ```
 
+<br>
+
 Third create a variable that holds the number of cores on the current machine :
 
 ```javascript
 const cpuLength = os.cpus().length;
 ```
+
+<br>
 
 let’s setup the cluster with the location of our server to run on each core :
 
@@ -118,6 +146,8 @@ cluster.setupPrimary({
   exec: __dirname + "/index.js",
 });
 ```
+
+<br>
 
 Create a for loop that start from 0 to less than `cpuLength` which is the number available cores on the machine.
 
@@ -129,6 +159,8 @@ for (let i = 0; i < cpuLength; i++) {
 }
 ```
 
+<br>
+
 Lastly, if a worker is killed let’s start a new one :
 
 ```javascript
@@ -137,6 +169,8 @@ cluster.on("exit", (worker, code, signal) => {
   cluster.fork();
 });
 ```
+
+<br>
 
 The complete `cluster.js` file should look like this :
 
@@ -165,6 +199,8 @@ cluster.on("exit", (worker, code, signal) => {
 });
 ```
 
+<br>
+
 now on your terminal run the following command :
 
 ```bash
@@ -177,6 +213,8 @@ listening on port 3000
 listening on port 3000
 listening on port 3000
 ```
+
+<br>
 
 After running the program the cluster module creates 4 instances of the same program on each core, My machine has only 4 cores, this may differ for your machine if you have more cores there will be more instances and the cluster module will load balance between them.
 

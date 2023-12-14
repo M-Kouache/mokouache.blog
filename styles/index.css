@@ -27,19 +27,26 @@
 }
 
 .prose pre > code {
-  @apply border-0 bg-gray-900 dark:bg-gray-900
+  @apply px-1 border-0 bg-gray-900 dark:bg-gray-900
 }
 
 .prose img {
-  @apply border-2 border-slate-600 rounded-lg
+  @apply rounded-lg
 }
 
 .prose a {
   @apply dark:text-teal-400 text-indigo-500
 }
 
-.prose code {
-  @apply px-1 py-0.5 bg-gray-900 dark:bg-gray-900 text-gray-50 rounded-lg border-gray-600 border-2
+.prose p > code {
+  @apply px-2 py-1 bg-zinc-800 dark:bg-zinc-900 text-gray-50 rounded-lg
+}
+
+.prose p > code::before {
+    @apply hidden
+}
+.prose p > code::after {
+    @apply hidden
 }
 
 .prose a {
