@@ -4,7 +4,7 @@ import HeroPost from "../components/hero-post";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
-import { CMS_NAME } from "../lib/constants";
+import { CMS_NAME, HOME_OG_IMAGE_URL } from "../lib/constants";
 import Post from "../interfaces/post";
 import Header from "../components/header";
 
@@ -20,8 +20,13 @@ export default function Index({ allPosts }: Props) {
       <Layout>
         <Head>
           <title>{`${CMS_NAME} Blog.`}</title>
+          <meta
+            name="description"
+            content={`Welcome to my website, your go-to destination for insightful articles on programming and coding! 🚀`}
+          />
+          <meta property="og:image" content={HOME_OG_IMAGE_URL} />
         </Head>
-        <Header/>
+        <Header />
         <Container>
           {heroPost && (
             <HeroPost

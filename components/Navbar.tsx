@@ -12,14 +12,24 @@ import {
 } from "@nextui-org/react";
 import DarkModeSwitch from "./DarkModeSwitch";
 import Image from "next/image";
-import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
-import { GITHUB_URL, LINKEDIN_URL } from "../lib/constants";
+import {
+  GitHubLogoIcon,
+  InstagramLogoIcon,
+  LinkedInLogoIcon,
+  TwitterLogoIcon,
+} from "@radix-ui/react-icons";
+import {
+  GITHUB_URL,
+  INSTAGRAM_URL,
+  LINKEDIN_URL,
+  X_URL,
+} from "../lib/constants";
 
 export default function Navigationbar() {
   const menuItems = ["/ Blog", "/ Portfolio"];
 
   return (
-    <Navbar className="mb-5" isBordered >
+    <Navbar className="mb-5" isBordered>
       {/*<NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>*/}
@@ -62,18 +72,28 @@ export default function Navigationbar() {
         </NavbarItem>*/}
       </NavbarContent>
 
-    <NavbarContent justify="center" >
+      <NavbarContent justify="center" className="pt-1">
         <NavbarItem className="mx-1">
-            <Link href={LINKEDIN_URL} target="_blank" color="foreground">
-                <LinkedInLogoIcon  width={30} height={30} /> 
-            </Link>
+          <Link href={LINKEDIN_URL} target="_blank" color="foreground">
+            <LinkedInLogoIcon width={30} height={30} />
+          </Link>
         </NavbarItem>
         <NavbarItem className="mx-1">
-            <Link href={GITHUB_URL} target="_blank" color="foreground" >
-                <GitHubLogoIcon  width={30} height={30} /> 
-            </Link>
+          <Link href={GITHUB_URL} target="_blank" color="foreground">
+            <GitHubLogoIcon width={30} height={30} />
+          </Link>
         </NavbarItem>
-    </NavbarContent>
+        <NavbarItem className="mx-1">
+          <Link href={X_URL} target="_blank" color="foreground">
+            <TwitterLogoIcon width={30} height={30} />
+          </Link>
+        </NavbarItem>
+        <NavbarItem className="mx-1">
+          <Link href={INSTAGRAM_URL} target="_blank" color="foreground">
+            <InstagramLogoIcon width={30} height={30} />
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
 
       <NavbarContent justify="end">
         <NavbarItem>
