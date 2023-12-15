@@ -38,14 +38,14 @@
   @apply dark:text-teal-400 text-indigo-500
 }
 
-.prose p > code {
-  @apply px-2 py-1 bg-zinc-800 dark:bg-zinc-900 text-gray-50 rounded-lg
+.prose p code {
+  @apply px-2 py-0.5 bg-zinc-800 dark:bg-zinc-900 text-gray-50 rounded-lg
 }
 
-.prose p > code::before {
+.prose p code::before {
     @apply hidden
 }
-.prose p > code::after {
+.prose p code::after {
     @apply hidden
 }
 
@@ -55,5 +55,17 @@
 
 .prose ul ::marker {
   @apply text-indigo-800 dark:text-indigo-500
+}
+
+.prose blockquote {
+    @apply bg-zinc-100 dark:bg-zinc-800 py-0.5 rounded-lg
+}
+
+.prose blockquote > p::before {
+    @apply hidden
+}
+
+.prose blockquote > p::before {
+    @apply hidden
 }
 

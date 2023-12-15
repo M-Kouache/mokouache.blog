@@ -17,7 +17,7 @@ clustering allows node.js to create multiple instances (workers) of the same Nod
 
 Each node.js process will run on its own core, listening on the same port, 
 the master process load balances incoming requests between each  spawned process, 
-and the `cluster module` achieves that by implementing the `round-robin` algorithm under the hood :
+and the `cluster module` achieves that by implementing the `round-robin` algorithm under the hood
 
 let’s get into how clustering works in node.js in detail, First, we will create a CPU-intensive program without the cluster module, and later on, we will scale the same program with clustering.
 

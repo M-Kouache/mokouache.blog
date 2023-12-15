@@ -12,17 +12,19 @@ import {
 } from "@nextui-org/react";
 import DarkModeSwitch from "./DarkModeSwitch";
 import Image from "next/image";
+import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { GITHUB_URL, LINKEDIN_URL } from "../lib/constants";
 
 export default function Navigationbar() {
   const menuItems = ["/ Blog", "/ Portfolio"];
 
   return (
-    <Navbar className="mb-5" >
+    <Navbar className="mb-5" isBordered >
       {/*<NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>*/}
 
-      <NavbarContent className="sm:hidden pr-3" justify="center">
+      <NavbarContent className="sm:hidden pr-3" justify="end">
         <NavbarBrand>
           <div className="rounded-2xl overflow-hidden border-2 border-white">
             <Image
@@ -59,6 +61,19 @@ export default function Navigationbar() {
           </Link>
         </NavbarItem>*/}
       </NavbarContent>
+
+    <NavbarContent justify="center" >
+        <NavbarItem className="mx-1">
+            <Link href={LINKEDIN_URL} target="_blank" color="foreground">
+                <LinkedInLogoIcon  width={30} height={30} /> 
+            </Link>
+        </NavbarItem>
+        <NavbarItem className="mx-1">
+            <Link href={GITHUB_URL} target="_blank" color="foreground" >
+                <GitHubLogoIcon  width={30} height={30} /> 
+            </Link>
+        </NavbarItem>
+    </NavbarContent>
 
       <NavbarContent justify="end">
         <NavbarItem>
