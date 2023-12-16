@@ -32,6 +32,7 @@ const Meta = () => {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <meta name="og:title" content={CMS_NAME} />
       <meta
         name="description"
         content={`Welcome to my website, your go-to destination for insightful articles on programming and coding! 🚀`}
@@ -40,12 +41,13 @@ const Meta = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@MoKouache" />
       <meta name="twitter:site" content="@MoKouache" />
+      <meta name="twitter:title" content={CMS_NAME} />
       <meta
         name="twitter:description"
         content={`Welcome to my website, your go-to destination for insightful articles on programming and coding! 🚀`}
       />
       <meta name="twitter:image" content={HOME_OG_IMAGE_URL} />
-      <meta name="twitter:image:alt" content={"Mohamed kouache"} />
+      <meta name="twitter:image:alt" content={CMS_NAME} />
     </Head>
   );
 };

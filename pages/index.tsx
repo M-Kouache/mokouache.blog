@@ -21,10 +21,10 @@ export default function Index({ allPosts }: Props) {
         <Head>
           <title>{`${CMS_NAME} Blog.`}</title>
           <meta
-            name="description"
+            name="og:description"
             content={`Welcome to my website, your go-to destination for insightful articles on programming and coding! 🚀`}
           />
-          <meta name="image" content={HOME_OG_IMAGE_URL} />
+          <meta name="og:image" content={HOME_OG_IMAGE_URL} />
           <meta name="twitter:title" content={`${CMS_NAME} Blog.`} />
         </Head>
         <Header />
