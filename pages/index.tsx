@@ -24,7 +24,8 @@ export default function Index({ allPosts }: Props) {
             name="description"
             content={`Welcome to my website, your go-to destination for insightful articles on programming and coding! 🚀`}
           />
-          <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+          <meta name="image" content={HOME_OG_IMAGE_URL} />
+          <meta name="twitter:title" content={`${CMS_NAME} Blog.`} />
         </Head>
         <Header />
         <Container>

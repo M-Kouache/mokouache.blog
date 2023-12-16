@@ -2,7 +2,7 @@
 title: 'Deep copy and shallow copy in javascript'
 excerpt: 'In JavaScript, when you copy objects or arrays, you might encounter the concepts of "deep copy" and "shallow copy". These terms refer to different ways of copying data structures and have implications for how changes to the copied structure affect the original one.'
 coverImage: '/assets/blog/deep-copy-and-shallow-copy-in-javascript/cover.png'
-date: '2020-03-16T05:35:07.322Z'
+date: '2023-12-05T05:35:07.322Z'
 author:
   name: Mohamed Kouache
   picture: '/assets/blog/authors/mo.png'

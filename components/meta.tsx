@@ -1,5 +1,5 @@
-import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import Head from "next/head";
+import { CMS_NAME, HOME_OG_IMAGE_URL } from "../lib/constants";
 
 const Meta = () => {
   return (
@@ -36,9 +36,18 @@ const Meta = () => {
         name="description"
         content={`Welcome to my website, your go-to destination for insightful articles on programming and coding! 🚀`}
       />
-      {/*<meta property="og:image" content={HOME_OG_IMAGE_URL} />*/}
+      <meta name="image" content={HOME_OG_IMAGE_URL} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content="@MoKouache" />
+      <meta name="twitter:site" content="@MoKouache" />
+      <meta
+        name="twitter:description"
+        content={`Welcome to my website, your go-to destination for insightful articles on programming and coding! 🚀`}
+      />
+      <meta name="twitter:image" content={HOME_OG_IMAGE_URL} />
+      <meta name="twitter:image:alt" content={"Mohamed kouache"} />
     </Head>
-  )
-}
+  );
+};
 
-export default Meta
+export default Meta;

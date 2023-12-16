@@ -29,7 +29,10 @@ export default function Post({ post, morePosts, preview }: Props) {
       <Head>
         <title>{title}</title>
         <meta name="description" content={`${post.excerpt}`} />
-        <meta property="og:image" content={post.ogImage.url} />
+        <meta name="image" content={post.ogImage.url} />
+        <meta name="twitter:description" content={`${post.excerpt}`} />
+        <meta name="twitter:image" content={post.ogImage.url} />
+        <meta name="twitter:image:alt" content={`Cover image of ${title} article`} />
       </Head>
       <Header />
       <Container>

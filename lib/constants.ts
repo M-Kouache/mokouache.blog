@@ -1,6 +1,6 @@
 export const EXAMPLE_PATH = 'blog-starter'
 export const CMS_NAME = 'Mohamed Kouache'
-export const HOME_OG_IMAGE_URL = '/assets/blog/authors/mo.png'
+export const HOME_OG_IMAGE_URL = '/assets/blog/authors/mo-cover.png'
 export const LINKEDIN_URL= 'https://linkedin.com/in/mohamed-kouache-2378a022b'
 export const GITHUB_URL= 'https://github.com/M-Kouache'
 export const X_URL= 'https://twitter.com/MoKouache'

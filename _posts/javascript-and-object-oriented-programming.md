@@ -2,7 +2,7 @@
 title: "Is JavaScript an Object-oriented programming language?"
 excerpt: "When it comes to the Object-oriented programming paradigm, javascript is quite different from other languages like C++/java in the way of implementing OOP."
 coverImage: "/assets/blog/javascript-and-object-oriented-programming/javascript-object-oriented-programming.png"
-date: "2020-03-16T05:35:07.322Z"
+date: "2023-12-04T05:35:07.322Z"
 author:
   name: Mohamed Kouache
   picture: "/assets/blog/authors/mo.png"

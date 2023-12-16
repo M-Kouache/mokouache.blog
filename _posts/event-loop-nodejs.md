@@ -2,7 +2,7 @@
 title: 'What is the event loop in node.js'
 excerpt: "Understanding the event loop is essential for writing efficient and scalable Node.js applications. It's the foundation of how Node.js manages asynchronous operations, making it possible to build high-performance applications with a relatively simple programming model."
 coverImage: '/assets/blog/event-loop-nodejs/event-loop-cover.png'
-date: '2020-03-16T05:35:07.322Z'
+date: '2023-08-21T05:35:07.322Z'
 author:
   name: Mohamed Kouache
   picture: '/assets/blog/authors/mo.png'

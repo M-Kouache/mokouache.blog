@@ -2,7 +2,7 @@
 title: 'Multithreading in node.js with worker threads'
 excerpt: "When it comes to dealing with CPU-intensive operations in node.js, we all agree that there are only three ways to do it either “cluster module”, “child process” or “worker threads”. in this article, we will see how to do CPU-bound operations with worker threads"
 coverImage: '/assets/blog/worker-threads-nodejs/worker-threads-cover.png'
-date: '2020-03-16T05:35:07.322Z'
+date: '2023-11-24T05:35:07.322Z'
 author:
   name: Mohamed Kouache
   picture: '/assets/blog/authors/mo.png'

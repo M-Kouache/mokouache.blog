@@ -2,7 +2,7 @@
 title: 'Arrow function and the "this" keyword in javascript'
 excerpt: 'In JavaScript, arrow functions are a concise way to write functions. They were introduced in ECMAScript 6 (ES6) and have a different way of handling the "this" keyword compared to traditional function expressions.'
 coverImage: '/assets/blog/arrow-function-and-this-keyword-js/cover.png'
-date: '2020-03-16T05:35:07.322Z'
+date: '2023-12-04T05:35:07.322Z'
 author:
   name: Mohamed Kouache
   picture: '/assets/blog/authors/mo.png'
