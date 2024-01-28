@@ -69,4 +69,4 @@ WebRTC works its magic through a combination of technologies and protocols:
 
 In a nutshell, WebRTC is the digital bridge that brings people closer to the online world. It's the reason why you can effortlessly connect with others through your browser, breaking down the barriers of distance. So, the next time you make a video call or share a document online, remember that it's WebRTC working its magic, making the internet a more connected and dynamic space, in the upcoming articles we will go depper into webrtc.
 
-## Stay tuned for the next part (:
+> Part 2 > [WebRTC and getUserMedia API: A Step-by-Step Guide](/posts/webrtc-part-two-getusermedia)
