@@ -174,6 +174,8 @@ async function closeMediaCapture () {
 
 > Full example on [github](https://github.com/M-Kouache/webrtc-tutorial-series/tree/main/getUserMedia)
 
+> Part 3: [Establishing a peer-to-peer connection](/posts/webrtc-part-three-rtcpeerconnection)
+
 ## Resources where you can learn more :
 
 - [https://blog.chromium.org/2012/07/introducing-getusermedia-and-javascript.html](https://blog.chromium.org/2012/07/introducing-getusermedia-and-javascript.html)
@@ -181,3 +183,4 @@ async function closeMediaCapture () {
 - [https://webrtc.ventures/2020/03/getusermedia-webrtc-api/](https://webrtc.ventures/2020/03/getusermedia-webrtc-api/)
 - [https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
 - [https://webrtc.org/getting-started/media-devices](https://webrtc.org/getting-started/media-devices)
+
