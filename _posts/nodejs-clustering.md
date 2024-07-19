@@ -2,7 +2,7 @@
 title: 'Scaling node.js apps with clustering'
 excerpt: "As a follow-up to the last article about the event loop, let's go deeper into how to scale node.js apps with clustering."
 coverImage: '/assets/blog/nodejs-clustering/nodeJs-clustering.png'
-date: '2020-09-11T05:35:07.322Z'
+date: '2024-07-18T05:35:07.322Z'
 author:
   name: Mohamed Kouache
   picture: '/assets/blog/authors/mo.png'
